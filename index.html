@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+
+        }
+        body{
+            background-color: gainsboro;
+
+
+        }
+
+        .container{
+            padding: 2rem;
+            margin-left: 25%;
+            position:absolute;
+            width: 50%;
+            height: auto;
+            background-color: black;
+            font-weight: 0.02rem;
+            color: azure;
+            font-size: 1.5rem;            
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;            
+            text-align: center;
+            border-radius: 8px;    
+            box-shadow: 0px 0px 5px red
+
+        }
+        h1{
+            font-size: 2rem;
+            padding: 2rem 2rem;
+            
+        }
+        h3{
+            padding-top: 2rem;        
+                  }
+
+    </style>
+</head>
+<body>
+
+
+    <h1>Mix Best Motivational Quotes</h1>
+    
+    <div class="container">
+    <div class="heading" id="quote"></div>
+    <h3>Writer</h3>
+    <div id="writer"></div>
+
+</div>
+
+
+    <script type="module">
+
+import quoteList from './quotes.js'
+
+let quote = prompt('Do you want t see quote, yes or no ? ', 'yes')
+
+if (quote==='no'){document.getElementById("quote").innerHTML = 'Not showing'}
+
+else{
+let randomNumber = Math.floor(Math.random()* quoteList.length)
+
+let quoteFull =  quoteList[randomNumber].split('—')
+
+console.log()
+document.getElementById("quote").innerHTML = quoteFull[0]
+document.getElementById("writer").innerHTML = quoteFull[1]
+}
+
+
+
+</script>
+</body>
+</html>
